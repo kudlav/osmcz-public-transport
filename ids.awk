@@ -4,7 +4,7 @@
 	url = "http://ra.osmsurround.org/analyzeRelation?noCache=true&_noCache=on&relationId="$3
 
 	system("curl -f -s -H 'Accept-Language: en' -o temp.html '"url"' \
-		|| (sleep 11; curl -s -H 'Accept-Language: en' -o temp.html '"url"') ")
+		|| (sleep 12; curl -s -H 'Accept-Language: en' -o temp.html '"url"') ")
 
 	t = "cat temp.html | grep 'Length in KM: <' | sed 's/.*>\\(.*\\)<\\/span>/\\1/'"
 

@@ -5,7 +5,7 @@
 	<xsl:template match="/osm">
 		<xsl:text>Informace o mapování naleznete v článku [[Cs:Veřejná doprava|Veřejná doprava]].
 
-'''Níže uvedené tabulky se generují ručně pomocí [[User:Kudlac/Skript Veřejná hromadná doprava v ČR|skriptu]].'''
+'''Níže uvedené tabulky se generují ručně pomocí [https://github.com/kudlav/osmcz-public-transport skriptu].'''
 
 Data OSM ke dni </xsl:text><xsl:value-of select="$current-date"/><xsl:text>.
 
@@ -88,7 +88,7 @@ Data OSM ke dni </xsl:text><xsl:value-of select="$current-date"/><xsl:text>.
 ! Relace
 ! Síť
 ! Dopravce
-! Verze
+! Datum změny
 ! Délka [km]
 ! Segmentů
 ! Kompletní
@@ -135,7 +135,7 @@ Data OSM ke dni </xsl:text><xsl:value-of select="$current-date"/><xsl:text>.
 ! Relace
 ! Síť
 ! Dopravce
-! Verze
+! Datum změny
 ! Délka [km]
 ! Segmentů
 ! Kompletní
@@ -160,7 +160,7 @@ Data OSM ke dni </xsl:text><xsl:value-of select="$current-date"/><xsl:text>.
 | {{Relation|</xsl:text><xsl:value-of select="@id" /><xsl:text>}}
 | </xsl:text><xsl:value-of select="tag[@k = 'network']/@v" /><xsl:text>
 | </xsl:text><xsl:value-of select="tag[@k = 'operator']/@v" /><xsl:text>
-| </xsl:text><xsl:value-of select="@version" /><xsl:text>
+| </xsl:text><xsl:value-of select="@timestamp" /><xsl:text>
 | $Length$ </xsl:text><xsl:value-of select="@id" /><xsl:text>
 | $Segments$ </xsl:text><xsl:value-of select="@id" /><xsl:text>
 | </xsl:text>
