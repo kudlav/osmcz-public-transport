@@ -1,6 +1,6 @@
 # Skript Veřejná hromadná doprava v ČR
 
-## Instalace (Ubuntu)
+## Instalace (Ubuntu, Debian)
 
 ```sh
 apt install xsltproc
@@ -23,12 +23,7 @@ Použitá Overpass Turbo query programem curl:
 [out:xml];
 area[name="Česko"]->.a;
 (
-	rel(area.a)[route=tram];
-  	rel(area.a)[route=bus];
-  	rel(area.a)[route=train];
-  	rel(area.a)[route=railway];
-  	rel(area.a)[route=subway];
-  	rel(area.a)[route=trolleybus];
+	rel(area.a)[route~"^(tram|bus|train|railway|subway|trolleybus)$"];
 );
 out meta;
 ```
